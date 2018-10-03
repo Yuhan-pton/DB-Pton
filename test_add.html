@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-amber.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" type="text/css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4579/list.min.js"></script>
+    <script defer src="https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <title>Add Data</title>
+</head>
+<body>
+<div class="mdl-layout-container">
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header has-drawer is-upgraded">
+        <!-- main part -->
+        <main class= "mdl-layout__content mdl-color-text--grey-700">
+            <div class="mdl-grid">
+                <!-- title -->
+                <div class="mdl-cell mdl-cell--12-col mdl-color--white" style="display: flex; align-items: center; padding-right: 4px;">
+                    <h3 style="margin:10px 0 8px 30px;">Add Data</h3>
+                </div>
+
+                <!-- form -->
+                <div class="mdl-cell mdl-cell--5-col mdl-color--white mdl-shadow--2dp" style="padding: 1.6%;">
+                    <form  method="post" action="submit.php">
+                        ID: <br>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" id="ID" name = "ID">
+                            <label class="mdl-textfield__label" for="ID"></label>
+                        </div>
+                        <br>name: <br>
+                        <div class="mdl-selectfield mdl-js-selectfield" style="width: 600px;">
+                            <input class="mdl-selectfield__select" type = "text" id="Name" name = "Name">
+                            <label class="mdl-selectfield__label" for="Name"></label>
+                        </div>
+                        <br>price: <br>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text"  id="Price" name = "Price">
+                            <label class="mdl-textfield__label" for="Price"></label>
+                        </div>
+                        <br>Detail: <br>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" id="Detail" name = "Detail">
+                            <label class="mdl-textfield__label" for="Detail"></label>
+                        </div>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+                <!-- buttons -->
+                    <button id = "button1" class="mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect" style="height: 288px;" onclick="addrow();">
+                        <i class="material-icons" style="font-size: xx-large">arrow_forward</i>
+                    </button>
+                <!-- table -->
+                <div class="mdl-cell mdl-cell--6-col mdl-color--white">  
+                    <table id='addsquids-table' class="mdl-data-table mdl-shadow--2dp" style="width:100%;">
+                        <thead>
+                        <tr id="tr0">
+                            <th class="sort" data-sort="ID">ID</th>
+                            <th class="sort" data-sort="name">Name</th>
+                            <th class="sort" data-sort="price">Price</th>
+                            <th class="sort" data-sort="detail">Detail</th>
+                        </tr>
+                        </thead>
+                        <tbody class="list">
+                        <tr id="tr1">
+                            <td id="ID_out">0</td>
+                            <td id="Name_out">NULL</td>
+                            <td id="Price_out">0</td>
+                            <td id="Detail_out">NULL</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <script>   
+                    var button1 = document.getElementById("button1");
+                    
+                    button1.addEventListener("click", function(e) {
+                    
+                        e.preventDefault();
+                    
+                        var Identity = document.getElementById("ID").value;
+                        var Name = document.getElementById("Name").value;
+                        var Price = document.getElementById("Price").value;
+                        var Detail = document.getElementById("Detail").value;
+                
+                        var Table = document.getElementById('addsquids-table');
+                        var TR = Table.rows[1];
+                        var TD0 = TR.cells[0];
+                        var TD1 = TR.cells[1];
+                        var TD2 = TR.cells[2];
+                        var TD3 = TR.cells[3];
+
+                        TD0.firstChild.nodeValue = Identity;
+                        TD1.firstChild.nodeValue = Name;
+                        TD2.firstChild.nodeValue = Price;
+                        TD3.firstChild.nodeValue = Detail;
+                    });   
+                </script>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
