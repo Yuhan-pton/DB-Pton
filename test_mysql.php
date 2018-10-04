@@ -22,8 +22,10 @@
         <th>Detail</th>
     </tr>
 <?php
+header("Content-type: text/html; charset=utf-8");
 echo '<h1>', "Database" ,'</h1>';
-$pdo = new PDO ( 'mysql:host=127.0.0.1;port=3308;dbname=testdata;charset=utf8', 'root', 'kohdai0621' );
+require_once("sql_connection.php");
+$pdo = db_connect();
 foreach ( $pdo->query ( 'select * from testtable' ) as $row ) {
 ?>
     <tr>
@@ -32,8 +34,17 @@ foreach ( $pdo->query ( 'select * from testtable' ) as $row ) {
     <td class = "elements"><?=$row['price']?></td>
     <td class = "elements"><?=$row['detail']?></td>
     <td>
+		<form action="test_edit.php" method="post">
+		<input type="submit" value="Edit">
+		<input type="hidden" name="ID" value="<?=$row['ID']?>">
+        <input type="hidden" name="Name" value="<?=$row['name']?>">
+        <input type="hidden" name="Price" value="<?=$row['price']?>">
+        <input type="hidden" name="Detail" value="<?=$row['detail']?>">
+		</form>
+	</td>
+    <td>
 		<form action="test_delete.php" method="post">
-		<input type="submit" value="Delete">
+		<input type="submit" value="Delete" onsubmit="return confirm('Are you sure you want to submit this form?');">
         <input type="hidden" name="ID" value="<?=$row['ID']?>">
         <input type="hidden" name="Name" value="<?=$row['name']?>">
         <input type="hidden" name="Price" value="<?=$row['price']?>">
