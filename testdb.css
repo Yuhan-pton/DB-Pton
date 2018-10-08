@@ -1,0 +1,60 @@
+#add a {
+    color : white;
+    background : skyblue;
+    width : 200px;
+    height : 50px;
+    text-decoration : none;
+    font-size: 30px;
+}
+
+h1 {
+    color : salmon;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: solid 2px gray;
+}
+
+table{
+    text-align : center;
+    width : 100%;
+    border-collapse: separate; 
+    border-spacing: 0 10px;  
+}
+
+.Head{
+    font-size : 30px;
+}
+
+.column1 {
+    width: 5%;
+  }
+  
+  .column2 {
+    width: 20%;
+  }
+  
+  .column3 {
+    width: 5%;
+  }
+  
+  .column4 {
+    width: 50%;
+  }
+  
+  .column5 {
+    width: 10%;
+  }
+  
+  .column6 {
+    width: 10%;
+  }
+
+  .Line {
+    font-family: Lato-Bold;
+    font-size: 20px;
+    color: #555555;
+    line-height: 1.4;
+    text-transform: uppercase;
+    background-color: transparent;
+    background-color: #f7f7f7;
+  }

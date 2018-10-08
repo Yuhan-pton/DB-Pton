@@ -1,10 +1,14 @@
 <?php
-    $dsn = 'mysql:host=127.0.0.1;port=3308;dbname=testdata;charset=utf8';
-	$user = 'root';
-	$password = 'kohdai0621';
+    //User authentification
+    if(($_POST['user']!== 'user1') or ($_POST['pass']!== 'pass')){
+        header("Location: test_mysql.php");
+    }else{
     if(isset($_POST['ID']) && isset($_POST['Name']) && isset($_POST['Price']) && isset($_POST['Detail'])){
 	try{
-		$dbh = new PDO($dsn, $user, $password);
+        //Connect to the database
+        require_once("sql_connection.php");
+        $pdo = db_connect();
+        //Delete data posted from "test_mysql.php" using SQL
 		$statement = $dbh->prepare("DELETE FROM testtable WHERE ID = :ID AND Name = :Name AND Price = :Price AND Detail = :Detail");
 	
 		if($statement){
@@ -30,6 +34,7 @@
 }else{
     echo "error!";
 }
+    }
  
 ?>
 

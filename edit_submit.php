@@ -1,11 +1,14 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
+//Connect to the database
 require_once("sql_connection.php");
 $pdo = db_connect();
+
 if(empty($_POST)) {
 	echo "<a href='test_mysql.php'>home</a>";
 	exit();
 }	
+//Edit data posted from "test_edit.php" using SQL
 		$stmt = $pdo->prepare("UPDATE testtable SET ID=:IDa, name=:Namea, price=:Pricea, detail=:Detaila WHERE ID=:IDb AND name=:Nameb AND price=:Priceb AND detail=:Detailb");
 		if ($stmt) {
             $IDa = $_POST['IDa'];
