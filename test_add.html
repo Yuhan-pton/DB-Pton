@@ -36,12 +36,23 @@
                         </div>
                         <br>name: <br>
                         <div class="mdl-selectfield mdl-js-selectfield" style="width: 600px;">
+                            <input type="radio" name="Name" value="Apple" checked> Apple
+                            <input type="radio" name="Name" value="Orange"> Orange
+                            <input type="radio" name="Name" value="Banana"> Banana
+                            <input type="radio" name="Name" value="Grape"> Grape
+                            <!--
                             <input class="mdl-selectfield__select" type = "text" id="Name" name = "Name">
+                            -->
                             <label class="mdl-selectfield__label" for="Name"></label>
                         </div>
                         <br>price: <br>
-                        <div class="mdl-textfield mdl-js-textfield">
+                        <div>
+                            <input type="radio" name="Price" value="10" checked> 10
+                            <input type="radio" name="Price" value="20"> 20
+                            <input type="radio" name="Price" value="30"> 30
+                            <!--
                             <input class="mdl-textfield__input" type="text"  id="Price" name = "Price">
+                            -->
                             <label class="mdl-textfield__label" for="Price"></label>
                         </div>
                         <br>Detail: <br>
@@ -53,11 +64,12 @@
                     </form>
                 </div>
 
-                <!-- buttons -->
+                <!-- buttons 
                     <button id = "button1" class="mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect" style="height: 288px;" onclick="addrow();">
                         <i class="material-icons" style="font-size: xx-large">arrow_forward</i>
                     </button>
-                <!-- table -->
+                -->
+                <!-- table 
                 <div class="mdl-cell mdl-cell--6-col mdl-color--white">  
                     <table id='addsquids-table' class="mdl-data-table mdl-shadow--2dp" style="width:100%;">
                         <thead>
@@ -78,17 +90,18 @@
                         </tbody>
                     </table>
                 </div>
-                <script>   
+                -->
+                <!--<script>   
                     var button1 = document.getElementById("button1");
                     
                     button1.addEventListener("click", function(e) {
                     
                         e.preventDefault();
                     
-                        var Identity = document.getElementById("ID").value;
-                        var Name = document.getElementById("Name").value;
-                        var Price = document.getElementById("Price").value;
-                        var Detail = document.getElementById("Detail").value;
+                        var Identity = document.getElementByID("ID").value;
+                        var Name = document.getElementByID("Name").value;
+                        var Price = document.getElementByID("Price").value;
+                        var Detail = document.getElementByID("Detail").value;
                 
                         var Table = document.getElementById('addsquids-table');
                         var TR = Table.rows[1];
@@ -103,6 +116,7 @@
                         TD3.firstChild.nodeValue = Detail;
                     });   
                 </script>
+            -->
             </div>
         </main>
     </div>
