@@ -16,7 +16,7 @@ h1 {
 
 table{
     text-align : center;
-    width : 100%;
+    width : 80%;
     border-collapse: separate; 
     border-spacing: 0 10px;  
 }
@@ -38,7 +38,7 @@ table{
   }
   
   .column4 {
-    width: 50%;
+    width: 30%;
   }
   
   .column5 {
@@ -54,7 +54,27 @@ table{
     font-size: 20px;
     color: #555555;
     line-height: 1.4;
-    text-transform: uppercase;
     background-color: transparent;
     background-color: #f7f7f7;
+  }
+
+  #sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111;/* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+
+/* The navigation menu links */
+  #sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
   }
